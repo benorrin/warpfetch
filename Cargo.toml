@@ -1,0 +1,21 @@
+[package]
+name = "warpfetch"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+description = "A fast system info fetch for the terminal, with a starfield warp intro"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/benorrin/warpfetch"
+readme = "README.md"
+keywords = ["fetch", "neofetch", "terminal", "sysinfo", "cli"]
+categories = ["command-line-utilities"]
+exclude = [".github/", "docs/"]
+
+[dependencies]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
